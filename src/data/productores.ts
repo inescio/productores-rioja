@@ -1,4 +1,6 @@
-const productoresData = [
+import { Productor, Categoria } from '../types';
+
+export const productoresData: Productor[] = [
   {
     id: 1,
     nombre: "Bodega Familiar Los Quebrachos",
@@ -137,7 +139,7 @@ const productoresData = [
   }
 ];
 
-const categorias = [
+export const categorias: Categoria[] = [
   { id: 'todos', nombre: 'Todos', icon: '🏪', color: 'bg-gray-100' },
   { id: 'vinos', nombre: 'Vinos', icon: '🍷', color: 'bg-red-100' },
   { id: 'alimentos', nombre: 'Alimentos', icon: '🧀', color: 'bg-yellow-100' },
