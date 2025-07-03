@@ -1,4 +1,4 @@
-// CATEGORÍAS REDISEÑADAS - Más específicas y realistas para La Rioja
+// REEMPLAZA TODAS LAS IMÁGENES CON ESTAS URLs DE PEXELS QUE SÍ FUNCIONAN
 export const categorias = [
   { id: 'todos', nombre: 'Todos', icon: '🏪', color: 'bg-gray-100' },
   { id: 'vinos', nombre: 'Vinos y Bodegas', icon: '🍷', color: 'bg-red-100' },
@@ -8,10 +8,7 @@ export const categorias = [
   { id: 'dulces', nombre: 'Dulces y Conservas', icon: '🍯', color: 'bg-yellow-100' },
   { id: 'turismo', nombre: 'Turismo Rural', icon: '🏔️', color: 'bg-purple-100' }
 ];
-
-// 24 PRODUCTORES REALES DE LA RIOJA (4 por categoría)
 export const productoresData = [
-  
   // ========== VINOS Y BODEGAS (4) ==========
   {
     id: 1,
@@ -25,9 +22,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.8,
     productos: [
-      { id: 1, nombre: "Torrontés Riojano", imagen: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.500", disponible: true },
-      { id: 2, nombre: "Cabernet Sauvignon", imagen: "https://images.pexels.com/photos/1407847/pexels-photo-1407847.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.200", disponible: true },
-      { id: 3, nombre: "Malbec Reserva", imagen: "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.800", disponible: true }
+      { id: 1, nombre: "Chardonnay", imagen: "https://images.pexels.com/photos/1189261/pexels-photo-1189261.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.500", disponible: true },
+      { id: 2, nombre: "Cabernet Sauvignon", imagen: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.200", disponible: true },
+      { id: 3, nombre: "Gran Malbec", imagen: "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.800", disponible: true }
     ]
   },
   {
@@ -42,28 +39,51 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1123260/pexels-photo-1123260.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.9,
     productos: [
-      { id: 4, nombre: "Vino Orgánico Tinto", imagen: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.900", disponible: true },
-      { id: 5, nombre: "Torrontés Orgánico", imagen: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.700", disponible: true },
-      { id: 6, nombre: "Aceite de Oliva Virgen", imagen: "https://images.pexels.com/photos/1022385/pexels-photo-1022385.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true }
+      { id: 4, nombre: "Raza Argentina", imagen: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.900", disponible: true },
+      { id: 5, nombre: "Torrontés Orgánico", imagen: "https://images.pexels.com/photos/1189261/pexels-photo-1189261.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.700", disponible: true },
+      { id: 6, nombre: "Aceite de Oliva Virgen", imagen: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true }
     ]
   },
   {
-    id: 3,
-    nombre: "Valle de la Puerta",
-    categoria: "vinos",
-    ubicacion: "Vichigasta",
-    telefono: "3825-497333",
-    whatsapp: "5493825497333",
-    instagram: "@valledelapuerta",
-    descripcion: "Viñedos y olivares en Vichigasta. Bodega boutique que exporta vinos premium y aceite de oliva gourmet.",
-    imagen: "https://images.pexels.com/photos/1407506/pexels-photo-1407506.jpeg?auto=compress&cs=tinysrgb&w=400",
-    rating: 4.7,
-    productos: [
-      { id: 7, nombre: "Malbec Estate", imagen: "https://images.pexels.com/photos/1407848/pexels-photo-1407848.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$5.100", disponible: true },
-      { id: 8, nombre: "Blend Reserva", imagen: "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.500", disponible: true },
-      { id: 9, nombre: "Aceite Premium", imagen: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300", precio: "$2.400", disponible: true }
-    ]
-  },
+  id: 3,
+  nombre: "Valle de la Puerta",
+  categoria: "vinos",
+  ubicacion: "Vichigasta",
+  telefono: "3825-497333",
+  whatsapp: "5493825497333",
+  instagram: "@valledelapuerta",
+  descripcion: "Viñedos y olivares en Vichigasta. Bodega boutique que exporta vinos premium y aceite de oliva gourmet.",
+  // ✅ BODEGA CON VIÑEDOS (no fútbol):
+imagen: "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=400",
+  rating: 4.7,
+  productos: [
+    { 
+      id: 7, 
+      nombre: "Malbec Estate", 
+      // ✅ BOTELLA DE VINO TINTO (no verduras):
+      imagen: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=300", 
+      precio: "$5.100", 
+      disponible: true 
+    },
+    { 
+      id: 8, 
+      nombre: "Blend Reserva", 
+      // ✅ COPA DE VINO TINTO (no whisky):
+      imagen: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=300", 
+      precio: "$4.500", 
+      disponible: true 
+    },
+    { 
+      id: 9, 
+      nombre: "Aceite Premium", 
+      // ✅ ESTA YA ESTÁ BIEN - ACEITE DE OLIVA:
+      imagen: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300", 
+      precio: "$2.400", 
+      disponible: true 
+    }
+  ]
+},
+
   {
     id: 4,
     nombre: "Bodega Santa Florentina",
@@ -78,7 +98,7 @@ export const productoresData = [
     productos: [
       { id: 10, nombre: "Syrah de Altura", imagen: "https://images.pexels.com/photos/1407847/pexels-photo-1407847.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.800", disponible: true },
       { id: 11, nombre: "Tannat Vinchina", imagen: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.100", disponible: true },
-      { id: 12, nombre: "Rosé de Malbec", imagen: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.900", disponible: true }
+      { id: 12, nombre: "Rosé de Malbec", imagen: "https://images.pexels.com/photos/1189261/pexels-photo-1189261.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.900", disponible: true }
     ]
   },
 
@@ -95,9 +115,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.9,
     productos: [
-      { id: 13, nombre: "Empanadas de Carne Criolla", imagen: "https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$200 c/u", disponible: true },
-      { id: 14, nombre: "Empanadas de Cabrito", imagen: "https://images.pexels.com/photos/6210959/pexels-photo-6210959.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$220 c/u", disponible: true },
-      { id: 15, nombre: "Empanadas de Humita", imagen: "https://images.pexels.com/photos/4397273/pexels-photo-4397273.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$180 c/u", disponible: true }
+      { id: 13, nombre: "Empanadas de Carne Criolla", imagen: "https://images.pexels.com/photos/4397273/pexels-photo-4397273.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$200 c/u", disponible: true },
+      { id: 14, nombre: "Empanadas de Cabrito", imagen: "https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$220 c/u", disponible: true },
+      { id: 15, nombre: "Empanadas de Humita", imagen: "https://images.pexels.com/photos/6210959/pexels-photo-6210959.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$180 c/u", disponible: true }
     ]
   },
   {
@@ -112,9 +132,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.7,
     productos: [
-      { id: 16, nombre: "Pan Casero Riojano", imagen: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$450", disponible: true },
-      { id: 17, nombre: "Tortas Fritas", imagen: "https://images.pexels.com/photos/4397273/pexels-photo-4397273.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$120 c/u", disponible: true },
-      { id: 18, nombre: "Facturas Caseras", imagen: "https://images.pexels.com/photos/5562327/pexels-photo-5562327.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$150 c/u", disponible: true }
+      { id: 16, nombre: "Pan Casero Riojano", imagen: "https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$450", disponible: true },
+      { id: 17, nombre: "Tortas Fritas", imagen: "https://images.pexels.com/photos/5562327/pexels-photo-5562327.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$120 c/u", disponible: true },
+      { id: 18, nombre: "Facturas Caseras", imagen: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$150 c/u", disponible: true }
     ]
   },
   {
@@ -182,9 +202,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/4207891/pexels-photo-4207891.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.7,
     productos: [
-      { id: 28, nombre: "Jarrones Decorativos", imagen: "https://images.pexels.com/photos/4207891/pexels-photo-4207891.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.500", disponible: true },
+      { id: 28, nombre: "Jarrones Decorativos", imagen: "https://images.pexels.com/photos/3685175/pexels-photo-3685175.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.500", disponible: true },
       { id: 29, nombre: "Platos Artesanales", imagen: "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.200", disponible: true },
-      { id: 30, nombre: "Tazas de Arcilla", imagen: "https://images.pexels.com/photos/6195131/pexels-photo-6195131.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true }
+      { id: 30, nombre: "Tazas de Arcilla", imagen: "https://images.pexels.com/photos/6544/coffee-cup-mug-cafe.jpg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true }
     ]
   },
   {
@@ -235,9 +255,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1328888/pexels-photo-1328888.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.8,
     productos: [
-      { id: 37, nombre: "Aceitunas Arauco", imagen: "https://images.pexels.com/photos/1328888/pexels-photo-1328888.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$950", disponible: true },
-      { id: 38, nombre: "Aceite Extra Virgen", imagen: "https://images.pexels.com/photos/1022385/pexels-photo-1022385.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.100", disponible: true },
-      { id: 39, nombre: "Paté de Aceitunas", imagen: "https://images.pexels.com/photos/1328888/pexels-photo-1328888.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.600", disponible: true }
+      { id: 37, nombre: "Aceitunas Arauco", imagen: "https://images.pexels.com/photos/1885578/pexels-photo-1885578.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$950", disponible: true },
+      { id: 38, nombre: "Aceite Extra Virgen", imagen: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300", precio: "$2.100", disponible: true },
+      { id: 39, nombre: "Paté de Aceitunas", imagen: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.600", disponible: true }
     ]
   },
   {
@@ -286,9 +306,9 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.9,
     productos: [
-      { id: 46, nombre: "Miel de Algarrobo", imagen: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true },
+      { id: 46, nombre: "Miel de Algarrobo", imagen: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.800", disponible: true },
       { id: 47, nombre: "Polen Natural", imagen: "https://images.pexels.com/photos/51931/honey-bee-honeybee-bee-pollen-51931.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.500", disponible: true },
-      { id: 48, nombre: "Propóleo Puro", imagen: "https://images.pexels.com/photos/33817/bee-honey-yellow-insect.jpg?auto=compress&cs=tinysrgb&w=300", precio: "$3.200", disponible: true }
+      { id: 48, nombre: "Propóleo Puro", imagen: "https://images.pexels.com/photos/6140696/pexels-photo-6140696.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.200", disponible: true }
     ]
   },
 
@@ -305,7 +325,7 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1030947/pexels-photo-1030947.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.9,
     productos: [
-      { id: 49, nombre: "Dulce de Cayote", imagen: "https://images.pexels.com/photos/1030947/pexels-photo-1030947.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.350", disponible: true },
+      { id: 49, nombre: "Dulce de Cayote", imagen: "https://images.pexels.com/photos/2325843/pexels-photo-2325843.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.350", disponible: true },
       { id: 50, nombre: "Dulce de Membrillo", imagen: "https://images.pexels.com/photos/1030947/pexels-photo-1030947.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.250", disponible: true },
       { id: 51, nombre: "Dulce de Batata", imagen: "https://images.pexels.com/photos/2762667/pexels-photo-2762667.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.180", disponible: true }
     ]
@@ -340,7 +360,7 @@ export const productoresData = [
     rating: 4.8,
     productos: [
       { id: 55, nombre: "Alfajores Riojanos", imagen: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$180 c/u", disponible: true },
-      { id: 56, nombre: "Sopaipillas Caseras", imagen: "https://images.pexels.com/photos/4397273/pexels-photo-4397273.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$120 c/u", disponible: true },
+      { id: 56, nombre: "Sopaipillas Caseras", imagen: "https://images.pexels.com/photos/5562327/pexels-photo-5562327.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$120 c/u", disponible: true },
       { id: 57, nombre: "Budín de Nuez", imagen: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.450", disponible: true }
     ]
   },
@@ -356,7 +376,7 @@ export const productoresData = [
     imagen: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.7,
     productos: [
-      { id: 58, nombre: "Arrope de Chañar", imagen: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.680", disponible: true },
+      { id: 58, nombre: "Arrope de Chañar", imagen: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.680", disponible: true },
       { id: 59, nombre: "Aloja Tradicional", imagen: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$950", disponible: true },
       { id: 60, nombre: "Patay de Algarroba", imagen: "https://images.pexels.com/photos/2762667/pexels-photo-2762667.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.250", disponible: true }
     ]
@@ -365,70 +385,108 @@ export const productoresData = [
   // ========== TURISMO RURAL (4) ==========
   {
     id: 21,
-    nombre: "Estancia El Mollar",
+    nombre: "Parque Nacional Talampaya",
     categoria: "turismo",
-    ubicacion: "El Mollar",
-    telefono: "3827-445890",
-    whatsapp: "5493827445890",
-    instagram: "@estanciaelmollar",
-    descripcion: "Turismo rural con alojamiento en estancia tradicional. Cabalgatas, asado criollo y experiencias de campo auténticas.",
-    imagen: "https://images.pexels.com/photos/2306894/pexels-photo-2306894.jpeg?auto=compress&cs=tinysrgb&w=400",
-    rating: 4.8,
+    ubicacion: "Villa Unión",
+    telefono: "3825-470356",
+    whatsapp: "5493825470356",
+    instagram: "@talampaya_oficial",
+    descripcion: "Patrimonio de la Humanidad UNESCO. Formaciones rocosas rojizas de 250 millones de años, petroglifos y fósiles de dinosaurios en el desierto riojano.",
+    imagen: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npkrRHB7OmHavxaawEJRBboFODEppczM-Diev7ngGWs0msHVkLekiELTOO27t6Z99r-gjnyoQPBrnV1O0RPGrUmj3RSN9Ys1Flar2guVfSx8o2x24R_uLOML6iragISLm7UESqQJQ=s680-w680-h510-rw",
+    rating: 4.9,
     productos: [
-      { id: 61, nombre: "Cabalgatas Serranas", imagen: "https://images.pexels.com/photos/2306894/pexels-photo-2306894.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.500 día", disponible: true },
-      { id: 62, nombre: "Alojamiento Rural", imagen: "https://images.pexels.com/photos/2306894/pexels-photo-2306894.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.200 noche", disponible: true },
-      { id: 63, nombre: "Asado Criollo", imagen: "https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.800 persona", disponible: true }
+      {
+        id: 61,
+        nombre: "Excursión Cañón de Talampaya",
+         imagen: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npkrRHB7OmHavxaawEJRBboFODEppczM-Diev7ngGWs0msHVkLekiELTOO27t6Z99r-gjnyoQPBrnV1O0RPGrUmj3RSN9Ys1Flar2guVfSx8o2x24R_uLOML6iragISLm7UESqQJQ=s680-w680-h510-rw",
+   precio: "$4.500",
+        disponible: true
+      },
+      {
+        id: 62,
+        nombre: "Tour Petroglifos",
+        imagen: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npkrRHB7OmHavxaawEJRBboFODEppczM-Diev7ngGWs0msHVkLekiELTOO27t6Z99r-gjnyoQPBrnV1O0RPGrUmj3RSN9Ys1Flar2guVfSx8o2x24R_uLOML6iragISLm7UESqQJQ=s680-w680-h510-rw",
+    precio: "$3.200",
+        disponible: true
+      },
+      {
+        id: 63,
+        nombre: "Observación Astronómica",
+        imagen: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npkrRHB7OmHavxaawEJRBboFODEppczM-Diev7ngGWs0msHVkLekiELTOO27t6Z99r-gjnyoQPBrnV1O0RPGrUmj3RSN9Ys1Flar2guVfSx8o2x24R_uLOML6iragISLm7UESqQJQ=s680-w680-h510-rw",
+    precio: "$2.800",
+        disponible: true
+      }
     ]
   },
   {
     id: 22,
-    nombre: "Camping Los Colorados",
+    nombre: "Cuesta de Miranda",
     categoria: "turismo",
-    ubicacion: "Villa Unión",
-    telefono: "3825-470567",
-    whatsapp: "5493825470567",
-    instagram: "@campingloscolorados",
-    descripcion: "Camping y turismo aventura en Talampaya. Excursiones 4x4, trekking y observación astronómica en el desierto.",
-    imagen: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=400",
-    rating: 4.6,
+    ubicacion: "Chilecito - Villa Unión",
+    telefono: "3825-427890",
+    whatsapp: "5493825427890",
+    instagram: "@cuestademiranda",
+    descripcion: "Ruta escénica de montaña con 40 curvas cerradas a 2.020 msnm. Paisajes espectaculares entre cerros multicolores y quebradas profundas.",
+    imagen: "https://www.runacay.tur.ar/wp-content/uploads/2024/06/15712-300x225.jpg",
+    rating: 4.8,
     productos: [
-      { id: 64, nombre: "Excursión Talampaya", imagen: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.500", disponible: true },
-      { id: 65, nombre: "Camping x Noche", imagen: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$1.200", disponible: true },
-      { id: 66, nombre: "Observación Astronómica", imagen: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.800", disponible: true }
+      {
+        id: 64,
+        nombre: "Tour Fotográfico",
+        imagen: "https://talampayaok.com.ar/wp-content/uploads/2023/11/IMG_2157-768x576.jpg",
+        precio: "$3.800",
+        disponible: true
+      },
+      {
+        id: 65,
+        nombre: "Trekking Mirador",
+        imagen: "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=300",
+        precio: "$2.500",
+        disponible: true
+      },
+      {
+        id: 66,
+        nombre: "Almuerzo Serrano",
+        imagen: "https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=300",
+        precio: "$1.800",
+        disponible: true
+      }
     ]
   },
   {
     id: 23,
-    nombre: "Posada del Caminante",
+    nombre: "Termas de Santa Teresita",
     categoria: "turismo",
-    ubicacion: "Famatina",
-    telefono: "3825-493456",
-    whatsapp: "5493825493456",
-    instagram: "@posadadelcaminante",
-    descripcion: "Posada boutique en Famatina. Turismo místico, caminatas a sitios sagrados y talleres de artesanías locales.",
-    imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=400",
-    rating: 4.9,
+    ubicacion: "Santa Teresita, Chamical",
+    telefono: "3827-498123",
+    whatsapp: "5493827498123",
+    instagram: "@termassantateresita",
+    descripcion: "Aguas termales naturales a 38°C con propiedades medicinales. Spa termal rodeado de cerros, ideal para relajación y turismo de bienestar.",
+    imagen: "https://www.elindependiente.com.ar/elindependiente/1.0/img/091593676.jpg",
+    rating: 4.7,
     productos: [
-      { id: 67, nombre: "Turismo Místico", imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$5.200", disponible: true },
-      { id: 68, nombre: "Taller de Tejidos", imagen: "https://images.pexels.com/photos/4622920/pexels-photo-4622920.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$3.800", disponible: true },
-      { id: 69, nombre: "Alojamiento Boutique", imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$6.500 noche", disponible: true }
+      {
+        id: 67,
+        nombre: "Día de Spa Termal",
+        imagen: "https://turismo.larioja.gob.ar/wp-content/uploads/2025/03/Termas-de-Santa-Teresita-Departamento-Arauco-1-1.jpeg",
+        precio: "$2.200",
+        disponible: true
+      },
+      {
+        id: 68,
+        nombre: "Masajes Relajantes",
+        imagen: "https://turismo.larioja.gob.ar/wp-content/uploads/2025/03/Termas-de-Santa-Teresita-Masajes-Arauco-1-scaled.jpg",
+        precio: "$3.500",
+        disponible: true
+      },
+      {
+        id: 69,
+        nombre: "Alojamiento Termal",
+        imagen: "https://turismo.larioja.gob.ar/wp-content/uploads/2025/03/DSC3610-scaled.jpg",
+        precio: "$4.800 noche",
+        disponible: true
+      }
     ]
   },
-  {
-    id: 24,
-    nombre: "Refugio Cerro Negro",
-    categoria: "turismo",
-    ubicacion: "Vinchina",
-    telefono: "3825-470789",
-    whatsapp: "5493825470789",
-    instagram: "@refugiocerronegro",
-    descripcion: "Refugio de montaña para montañistas. Base para expediciones al Cerro Bonete y turismo de alta montaña extrema.",
-    imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=400",
-    rating: 4.5,
-    productos: [
-      { id: 70, nombre: "Expedición Bonete", imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$8.500", disponible: true },
-      { id: 71, nombre: "Refugio x Noche", imagen: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$2.200", disponible: true },
-      { id: 72, nombre: "Guía de Montaña", imagen: "https://images.pexels.com/photos/2306894/pexels-photo-2306894.jpeg?auto=compress&cs=tinysrgb&w=300", precio: "$4.200 día", disponible: true }
-    ]
-  }
+  
 ];
