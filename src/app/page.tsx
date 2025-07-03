@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Search, MapPin, MessageCircle, Instagram, Star, Heart } from 'lucide-react';
-import { productoresData, categorias } from '../data/productores.ts';
+import { productoresData, categorias } from '../data/productores';
 import { Productor, Producto, Categoria } from '../types';
 
 export default function ProductoresRioja() {
