@@ -223,46 +223,46 @@ export default function ProductoresRioja() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-     <header className="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg">
-  <div className="max-w-6xl mx-auto px-4 py-8">
-    <div className="flex items-center justify-between mb-6">
-      {/* Título principal */}
-      <div className="flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
-          Productores de La Rioja
-        </h1>
-        <p className="text-xl text-red-100">
-          Descubrí los mejores productos artesanales de nuestra provincia
-        </p>
-      </div>
+<header className="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg">
+  <div className="max-w-6xl mx-auto px-4 py-4 md:py-8">
+    <div className="flex flex-col md:flex-row items-center md:items-start justify-between space-y-4 md:space-y-0 mb-4 md:mb-6">
       
-      {/* Logo de La Rioja */}
-      <div className="flex-shrink-0 ml-8">
+      {/* Logo de La Rioja - PRIMERO en móvil */}
+      <div className="flex-shrink-0 md:order-2 md:ml-8">
         <img 
           src="/logo-la-rioja.png" 
           alt="Logo La Rioja Argentina" 
-          className="h-16 md:h-20 lg:h-24 w-auto opacity-90 hover:opacity-100 transition-opacity"
+          className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto opacity-90 hover:opacity-100 transition-opacity"
         />
+      </div>
+
+      {/* Título principal - SEGUNDO en móvil */}
+      <div className="flex-1 text-center md:text-left md:order-1">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+          Productores de La Rioja
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl text-red-100">
+          Descubrí los mejores productos artesanales de nuestra provincia
+        </p>
       </div>
     </div>
     
     {/* Búsqueda centrada */}
-<div className="max-w-md mx-auto relative">
-  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg p-0.5">
-    <div className="bg-white rounded-lg h-full"></div>
-  </div>
-  <div className="relative">
-    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 z-10" />
-    <input
-      type="text"
-      placeholder="Buscar productores o ubicación..."
-      value={busqueda}
-      onChange={(e) => setBusqueda(e.target.value)}
-      className="relative w-full pl-10 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white bg-white"
-    />
-  </div>
-</div>
-
+    <div className="max-w-sm sm:max-w-md mx-auto relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg p-0.5">
+        <div className="bg-white rounded-lg h-full"></div>
+      </div>
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 z-10" />
+        <input
+          type="text"
+          placeholder="Buscar productores o ubicación..."
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+          className="relative w-full pl-10 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white bg-white text-sm sm:text-base"
+        />
+      </div>
+    </div>
   </div>
 </header>
 
