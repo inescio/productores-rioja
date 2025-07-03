@@ -1,5 +1,5 @@
 // CATEGORÍAS REDISEÑADAS - Más específicas y realistas para La Rioja
-export const categorias: Categoria[] = [
+export const categorias = [
   { id: 'todos', nombre: 'Todos', icon: '🏪', color: 'bg-gray-100' },
   { id: 'vinos', nombre: 'Vinos y Bodegas', icon: '🍷', color: 'bg-red-100' },
   { id: 'gastronomia', nombre: 'Gastronomía Regional', icon: '🥟', color: 'bg-orange-100' },
@@ -10,7 +10,7 @@ export const categorias: Categoria[] = [
 ];
 
 // 24 PRODUCTORES REALES DE LA RIOJA (4 por categoría)
-export const productoresData: Productor[] = [
+export const productoresData = [
   
   // ========== VINOS Y BODEGAS (4) ==========
   {
