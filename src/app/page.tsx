@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { Search, MapPin, MessageCircle, Instagram, Star, Heart } from 'lucide-react';
 import { productoresData, categorias } from '../data/productores.ts';
 import { Productor, Producto, Categoria } from '../types';
@@ -28,7 +27,7 @@ export default function ProductoresRioja() {
   const ProductorCard = ({ productor }: { productor: Productor }) => (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       <div className="relative">
-        <Image
+        <img
           src={productor.imagen}
           alt={productor.nombre}
           width={400}
@@ -87,7 +86,7 @@ export default function ProductoresRioja() {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl max-w-md w-full">
         <div className="relative">
-          <Image
+          <img
             src={producto.imagen}
             alt={producto.nombre}
             width={448} // max-w-md ( Tailwind ) roughly, h-64 = 256px
@@ -133,7 +132,7 @@ export default function ProductoresRioja() {
             </button>
             
             <div className="flex flex-col md:flex-row gap-6">
-              <Image
+              <img
                 src={productorSeleccionado.imagen} 
                 alt={productorSeleccionado.nombre}
                 width={192} // w-48 = 192px, h-48 = 192px
@@ -181,7 +180,7 @@ export default function ProductoresRioja() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productorSeleccionado.productos.map((producto: Producto) => (
               <div key={producto.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <Image
+                <img
                   src={producto.imagen} 
                   alt={producto.nombre}
                   width={300} // Asumiendo que las imagenes de producto son 300 de ancho como en los datos originales
@@ -308,7 +307,7 @@ export default function ProductoresRioja() {
             <div>
               <h4 className="font-semibold mb-4">Contacto</h4>
               <p className="text-gray-300">Email: info@productoresrioja.com</p>
-              <p className="text-gray-300">Tel: (3822) 123-456</p>
+              <p className="text-gray-300">Tel: (3804) 123-456</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Síguenos</h4>
