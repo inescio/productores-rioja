@@ -227,15 +227,7 @@ export default function ProductoresRioja() {
   <div className="max-w-6xl mx-auto px-4 py-4 md:py-8">
     <div className="flex flex-col md:flex-row items-center md:items-start justify-between space-y-4 md:space-y-0 mb-4 md:mb-6">
       
-      {/* Logo de La Rioja - PRIMERO en móvil */}
-      <div className="flex-shrink-0 md:order-2 md:ml-8">
-        <img 
-          src="/logo-la-rioja.png" 
-          alt="Logo La Rioja Argentina" 
-          className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto opacity-90 hover:opacity-100 transition-opacity"
-        />
-      </div>
-
+      
       {/* Título principal - SEGUNDO en móvil */}
       <div className="flex-1 text-center md:text-left md:order-1">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
