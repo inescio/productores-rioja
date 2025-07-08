@@ -1,11 +1,40 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Search, MapPin, MessageCircle, Instagram, Star, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, MapPin, MessageCircle, Instagram, Star, Heart, Globe } from 'lucide-react';
 import { productoresData, categorias } from '../data/productores';
 import { Productor, Producto, Categoria } from '../types';
 
+// Define available languages
+const languages = [
+  { code: 'es', name: 'Español' },
+  { code: 'en', name: 'English' },
+  { code: 'pt', name: 'Português' },
+];
+
+// Helper function to get translations
+const translations: Record<string, Record<string, string>> = {};
+
+async function loadTranslations(lang: string) {
+  if (!translations[lang]) {
+    const response = await fetch(`/locales/${lang}.json`);
+    translations[lang] = await response.json();
+  }
+}
+
+function t(key: string, lang: string, replacements?: Record<string, string>): string {
+  let translation = translations[lang]?.[key] || key;
+  if (replacements) {
+    Object.keys(replacements).forEach(placeholder => {
+      translation = translation.replace(`{{${placeholder}}}`, replacements[placeholder]);
+    });
+  }
+  return translation;
+}
+
 export default function ProductoresRioja() {
+  const [language, setLanguage] = useState<string>('es');
+  const [isTranslationsLoaded, setIsTranslationsLoaded] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState<string>('todos');
   const [busqueda, setBusqueda] = useState<string>('');
   const [productorSeleccionado, setProductorSeleccionado] = useState<Productor | null>(null);
@@ -19,10 +48,22 @@ export default function ProductoresRioja() {
     return matchCategoria && matchBusqueda;
   });
 
+  useEffect(() => {
+    async function initTranslations() {
+      await loadTranslations(language);
+      setIsTranslationsLoaded(true);
+    }
+    initTranslations();
+  }, [language]);
+
   const abrirWhatsApp = (whatsapp: string, nombre: string) => {
-    const mensaje = `Hola! Me interesa conocer más sobre los productos de ${nombre}`;
+    const mensaje = t('hola_me_interesa', language, { nombre });
     window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`, '_blank');
   };
+
+  if (!isTranslationsLoaded) {
+    return <div>Loading translations...</div>; // Or a more sophisticated loading indicator
+  }
 
   const ProductorCard = ({ productor }: { productor: Productor }) => (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -45,6 +86,7 @@ export default function ProductoresRioja() {
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xl font-bold text-gray-800">{productor.nombre}</h3>
+          {/* Rating - Assuming not to translate for now, or would require more complex data structure */}
           <div className="flex items-center">
             <Star className="h-4 w-4 text-yellow-400 fill-current" />
             <span className="text-sm text-gray-600 ml-1">{productor.rating}</span>
@@ -63,17 +105,21 @@ export default function ProductoresRioja() {
             onClick={() => setProductorSeleccionado(productor)}
             className="text-red-600 font-semibold hover:text-red-700 flex items-center"
           >
-            Ver productos →
+            {t('ver_productos', language)} →
           </button>
           
           <div className="flex space-x-2">
             <button 
               onClick={() => abrirWhatsApp(productor.whatsapp, productor.nombre)}
               className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full transition-colors"
+              title={t('whatsapp', language)}
             >
               <MessageCircle className="h-4 w-4" />
             </button>
-            <button className="bg-pink-500 hover:bg-pink-600 text-white p-2 rounded-full transition-colors">
+            <button
+              className="bg-pink-500 hover:bg-pink-600 text-white p-2 rounded-full transition-colors"
+              title={t('instagram', language)}
+            >
               <Instagram className="h-4 w-4" />
             </button>
           </div>
@@ -107,10 +153,13 @@ export default function ProductoresRioja() {
           )}
           <div className="flex items-center justify-between">
             <span className={`px-3 py-1 rounded-full text-sm ${producto.disponible ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-              {producto.disponible ? 'Disponible' : 'No disponible'}
+              {producto.disponible ? t('disponible', language) : t('no_disponible', language)}
             </span>
-            <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
-              Consultar por WhatsApp
+            <button
+              onClick={() => productorSeleccionado && abrirWhatsApp(productorSeleccionado.whatsapp, producto.nombre)}
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+            >
+              {t('consultar_whatsapp', language)}
             </button>
           </div>
         </div>
@@ -128,7 +177,7 @@ export default function ProductoresRioja() {
               onClick={() => setProductorSeleccionado(null)}
               className="text-red-600 hover:text-red-700 mb-4 flex items-center"
             >
-              ← Volver al catálogo
+              {t('volver_catalogo', language)}
             </button>
             
             <div className="flex flex-col md:flex-row gap-6">
@@ -162,11 +211,11 @@ export default function ProductoresRioja() {
                     className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center"
                   >
                     <MessageCircle className="h-5 w-5 mr-2" />
-                    WhatsApp
+                    {t('whatsapp', language)}
                   </button>
                   <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg flex items-center">
                     <Instagram className="h-5 w-5 mr-2" />
-                    Instagram
+                    {t('instagram', language)}
                   </button>
                 </div>
               </div>
@@ -176,7 +225,7 @@ export default function ProductoresRioja() {
 
         {/* Productos */}
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Productos</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('productos', language)}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productorSeleccionado.productos.map((producto: Producto) => (
               <div key={producto.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
@@ -195,13 +244,13 @@ export default function ProductoresRioja() {
                   )}
                   <div className="flex items-center justify-between">
                     <span className={`px-2 py-1 rounded-full text-xs ${producto.disponible ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                      {producto.disponible ? 'Disponible' : 'No disponible'}
+                      {producto.disponible ? t('disponible', language) : t('no_disponible', language)}
                     </span>
                     <button 
                       onClick={() => setProductoModal(producto)}
                       className="text-red-600 hover:text-red-700 font-semibold"
                     >
-                      Ver detalles
+                      {t('ver_detalles', language)}
                     </button>
                   </div>
                 </div>
@@ -231,11 +280,27 @@ export default function ProductoresRioja() {
       {/* Título principal - SEGUNDO en móvil */}
       <div className="flex-1 text-center md:text-left md:order-1">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-          Productores de La Rioja
+          {t('productores_la_rioja', language)}
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-red-100">
-          Descubrí los mejores productos artesanales de nuestra provincia
+          {t('descubri_productos', language)}
         </p>
+      </div>
+
+      {/* Language Selector */}
+      <div className="relative md:order-2">
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+          className="bg-white text-red-700 px-3 py-2 rounded-lg shadow-md appearance-none focus:outline-none focus:ring-2 focus:ring-red-300"
+        >
+          {languages.map((lang) => (
+            <option key={lang.code} value={lang.code}>
+              {lang.name}
+            </option>
+          ))}
+        </select>
+        <Globe className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-red-700 pointer-events-none" />
       </div>
     </div>
     
@@ -248,7 +313,7 @@ export default function ProductoresRioja() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 z-10" />
         <input
           type="text"
-          placeholder="Buscar productores o ubicación..."
+          placeholder={t('buscar_productores_ubicacion', language)}
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
           className="relative w-full pl-10 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white bg-white text-sm sm:text-base"
@@ -273,6 +338,7 @@ export default function ProductoresRioja() {
                 }`}
               >
                 <span className="mr-2">{categoria.icon}</span>
+                {/* Assuming categoria.nombre is already in the desired language or doesn't need translation */}
                 {categoria.nombre}
               </button>
             ))}
@@ -284,7 +350,7 @@ export default function ProductoresRioja() {
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-800">
-            {productoresFiltrados.length} productores encontrados
+            {t('productores_encontrados', language, { count: productoresFiltrados.length.toString() })}
           </h2>
         </div>
 
@@ -298,8 +364,8 @@ export default function ProductoresRioja() {
         {productoresFiltrados.length === 0 && (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">No se encontraron productores</h3>
-            <p className="text-gray-600">Intenta con otros términos de búsqueda o cambia la categoría</p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('no_productores_encontrados', language)}</h3>
+            <p className="text-gray-600">{t('intentar_otros_terminos', language)}</p>
           </div>
         )}
       </div>
@@ -309,35 +375,37 @@ export default function ProductoresRioja() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Productores La Rioja</h3>
+              <h3 className="text-xl font-bold mb-4">{t('productores_la_rioja', language)}</h3>
               <p className="text-gray-300">
+                {/* This specific tagline might need its own translation key if it's dynamic */}
                 Conectando productores locales con consumidores de toda la provincia.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contacto</h4>
-              <p className="text-gray-300">Email: info@productoresrioja.com</p>
-              <p className="text-gray-300">Tel: (3804) 123-456</p>
+              <h4 className="font-semibold mb-4">{t('contacto', language)}</h4>
+              <p className="text-gray-300">{t('email_contacto', language)}</p>
+              <p className="text-gray-300">{t('tel_contacto', language)}</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Síguenos</h4>
+              <h4 className="font-semibold mb-4">{t('siguenos', language)}</h4>
               <div className="flex space-x-4">
-                <button className="text-gray-300 hover:text-white">Facebook</button>
-                <button className="text-gray-300 hover:text-white">Instagram</button>
-                <button className="text-gray-300 hover:text-white">WhatsApp</button>
+                <button className="text-gray-300 hover:text-white">{t('facebook', language)}</button>
+                <button className="text-gray-300 hover:text-white">{t('instagram', language)}</button>
+                <button className="text-gray-300 hover:text-white">{t('whatsapp', language)}</button>
               </div>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Productores La Rioja. Todos los derechos reservados.</p>
+            <p dangerouslySetInnerHTML={{ __html: t('derechos_reservados', language) }} />
           </div>
         </div>
       </footer>
 
       {/* WhatsApp flotante */}
       <button 
-        onClick={() => abrirWhatsApp('5493822123456', 'Productores La Rioja')}
+        onClick={() => abrirWhatsApp('5493822123456', t('productores_la_rioja', language))}
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 z-50"
+        title={t('consultar_whatsapp', language)}
       >
         <MessageCircle className="h-6 w-6" />
       </button>
